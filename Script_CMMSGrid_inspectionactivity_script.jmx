@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Inspection_count" enabled="true">
+          <stringProp name="CounterConfig.start">4</stringProp>
+          <stringProp name="CounterConfig.end">10000</stringProp>
+          <stringProp name="CounterConfig.incr">2</stringProp>
+          <stringProp name="CounterConfig.name">IC</stringProp>
+          <stringProp name="CounterConfig.format"></stringProp>
+          <boolProp name="CounterConfig.per_user">false</boolProp>
+        </CounterConfig>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="data" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.value">{   &quot;forms&quot;: {     &quot;primary_form&quot;: {       &quot;formId&quot;: &quot;5e86bbd7c69ea15eb152c3a3&quot;,       &quot;formData&quot;: {         &quot;activity_name&quot;: &quot;Project_bala_6${IC}&quot;,         &quot;facility&quot;: [           {             &quot;id&quot;: &quot;eyJpdiI6ImFHOVVObmRxV0ZJMVNVRmllV3RQUWc9PSIsInZhbHVlIjoiUEFWOWF4N1hzeXN3YUplelJaaWZEQT09IiwibWFjIjoiNjRiZjkwNjFhYThjMDI3ZDQ1YTlhOWQyZDMzODAxZWU3ZjNmNjYzYTY3ZTIyZTVjOTZlMmE1NmY4NjQ4NmFlOCJ9&quot;,             &quot;value&quot;: &quot;Fac-Pune_1&quot;           }         ],         &quot;facility_default_field_dropdown&quot;: &quot;Fac-Pune_1&quot;,         &quot;department&quot;: [],         &quot;department_default_field_nested_picker&quot;: &quot;&quot;,         &quot;location&quot;: [],         &quot;location_default_field_nested_picker&quot;: &quot;&quot;,         &quot;inspection_category&quot;: [],         &quot;inspection_category_default_field_nested_picker&quot;: &quot;&quot;,         &quot;priority&quot;: [],         &quot;priority_default_field_dropdown&quot;: &quot;&quot;,         &quot;tag&quot;: &quot;&quot;,         &quot;department_assigned_to&quot;: [],         &quot;person_assigned_to&quot;: [],         &quot;section&quot;: [],         &quot;section_default_field_nested_picker&quot;: &quot;&quot;,         &quot;description&quot;: &quot;&quot;,         &quot;schedule&quot;: {           &quot;occurrence&quot;: {             &quot;type&quot;: &quot;daily&quot;,             &quot;starts&quot;: &quot;2022-08-18 08:05&quot;,             &quot;every&quot;: 2           },           &quot;scheduleType&quot;: &quot;date&quot;,           &quot;repeatForm&quot;: {             &quot;checkName&quot;: &quot;due_date&quot;,             &quot;generatePm&quot;: 1           },           &quot;scheduleEnds&quot;: {             &quot;type&quot;: &quot;afterOccurrence&quot;,             &quot;occurrence&quot;: 1           }         },         &quot;occurences&quot;: 1,         &quot;occurence_type&quot;: &quot;daily&quot;,         &quot;isScheduleChanged&quot;: false,         &quot;inspections&quot;: [           {             &quot;uniqueId&quot;: &quot;21689181&quot;,             &quot;type&quot;: &quot;asset&quot;,             &quot;inspection_item_name&quot;: [               {                 &quot;id&quot;: &quot;eyJpdiI6ImFHOVVObmRxV0ZJMVNVRmllV3RQUWc9PSIsInZhbHVlIjoibnlpR2RUVVhDWXRXQmFKdWl0RVBrVk5pMTQra213Y1d6MFBiUnhKbzBncz0iLCJtYWMiOiI5NzQ2MGI0YTdlZGUxMTBkNjY3Y2NjMjUwNTNiMGY2MjUyOTljZWRjNGE0OTBlYjYzYjQ3MDVmMWM4ZWMzNDg1In0=&quot;,                 &quot;value&quot;: &quot;Asset_1&quot;               }             ],             &quot;inspection_template&quot;: [               {                 &quot;id&quot;: &quot;eyJpdiI6ImFHOVVObmRxV0ZJMVNVRmllV3RQUWc9PSIsInZhbHVlIjoiZGpkTnU5THJ6Zm9QWlgvbHZJMDJJWU1hUFdvMmd2NkUxeTVIWEk5TUdDbz0iLCJtYWMiOiI2OTZkM2YxNjVmOTRjOWNiZGQ1NWJiNDcwMmI1NzVkYmY3ZmE5MjA0ZDBmMDY0NWI3MTgyZmM1Mjk2ODM4ZTQ4In0=&quot;,                 &quot;value&quot;: &quot;Bala&quot;               }             ],             &quot;inspection_items&quot;: [               {                 &quot;uniqueId&quot;: &quot;68186242&quot;,                 &quot;item_name&quot;: &quot;Car&quot;,                 &quot;item_inspection_type&quot;: [                   {                     &quot;id&quot;: 1,                     &quot;value&quot;: &quot;Pass/Fail&quot;,                     &quot;nestedIndex&quot;: &quot;0&quot;,                     &quot;index&quot;: &quot;0&quot;,                     &quot;selected&quot;: true                   }                 ],                 &quot;values&quot;: [                   {                     &quot;id&quot;: 1,                     &quot;value&quot;: &quot;Pass&quot;                   },                   {                     &quot;id&quot;: 2,                     &quot;value&quot;: &quot;Fail&quot;                   }                 ],                 &quot;edit&quot;: false,                 &quot;minimum_value&quot;: null,                 &quot;maximum_value&quot;: null               }             ]           }         ],         &quot;inspection_type&quot;: [           {             &quot;id&quot;: 1,             &quot;value&quot;: &quot;asset&quot;           }         ]       },       &quot;formName&quot;: &quot;Inspection Activity Form Layout&quot;     }   },   &quot;token&quot;: &quot;79098051&quot; }</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">data</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">staging.247software.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/inspectionActivity</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">cookie</stringProp>
+                <stringProp name="Header.value">jwt_token=eyJhbGciOiAiSFMyNTYiLCJ0eXAiOiAiSldUIn0=.eyJpc3MiIDogImV3cEJPcGZLYU9zaHoxVXJSZnlGODNvT3pTeFFOUExsIiAsICJkYXRhIjogIjYxMWEzYmQ5NzYzOGMyMmE3OTc3ZjkyNCIsImRhdGFfcGFyYW0iOiAiNTg4IiwicmFuIjoiYTE1NWI1YWQ3ODQ1NDlmN2E5OTY3Y2Y1ZGUwODZjMDhmOTRlOWYxYiIsInJhbmRvbSI6ImVlOGNiYjYyM2FiNmQyMjViNjc5YzRhNGEwOWJiN2UwNmUwNjkwYjQifQ==.S7HZUZj6R8Wz0hab9m69ydYjo7SyCou1uFpLinECszw=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
